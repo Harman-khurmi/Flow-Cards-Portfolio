@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import Card1 from './card1'
+import Card1 from './Card1'
 import CardSmall from './CardSmall'
 import myImage from '../assets/mypic.jpg'
 

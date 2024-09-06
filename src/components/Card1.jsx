@@ -18,5 +18,5 @@ function Card1({ Data, reference }) {
   )
 }
 
-export default Card1
+export default Card1;
 
