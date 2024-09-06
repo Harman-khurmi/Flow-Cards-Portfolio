@@ -1,18 +1,33 @@
 import React from 'react'
-import myImage from '../assets/mypic.jpg'
-function CardSmall({ smalldata }) {
+import { motion } from "framer-motion"
+// Function to truncate the subheading if it exceeds the word limit
+function CardSmall({ Data, reference, wordLimit = 5 }) {
+  const truncateText = (text, limit) => {
+    const words = text.split(' ');
+    if (words.length > limit) {
+      return words.slice(0, limit).join(' ') + '...';
+    }
+    return text;
+  };
   return (
     <>
-      <div className='h-40 w-[11rem] bg-zinc-100 rounded-2xl flex items-center p-5 shadow-xl'>
-        <div>
-          <img src={myImage} className='h-10 w-10 object-cover rounded-xl mb-3' />
-          <p className='text-sm font-[400] mb-3'>{smalldata.heading}</p>
-          <button className='bg-blue-500 text-slate-100 p-1 h-8 w-24 font-medium rounded-lg text-sm'>{smalldata.button}</button>
-        </div>
+      <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.05 }} dragElastic={0.1}
 
-      </div>
+        className='h-44 w-44 bg-white rounded-2xl flex-row items-center p-4  shadow-md border-solid border-gray-200 border-[1px] cursor-pointer flex-shrink-0'>
+        <div>
+          <img src={Data.Image} className='object-cover h-12 w-12 flex justify-center content-center items-center rounded-lg my-1' />
+        </div>
+        <div>
+          <h3 className='text-sm width-full break-words my-3'>{truncateText(Data.Subheading, wordLimit)}</h3>
+        </div>
+        <div className='h-7 w-[5rem] bg-zinc-300 rounded-md content-center text-center my-4'>
+          <button>{Data.Button}</button>
+        </div>
+      </motion.div>
     </>
   )
 }
 
-export default CardSmall
+
+export default CardSmall;
+

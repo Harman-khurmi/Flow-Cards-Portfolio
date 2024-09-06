@@ -1,14 +1,27 @@
 import React, { useRef, useState } from 'react'
-import Card1 from './Card1'
-import CardSmall from './CardSmall'
-import myImage from '../assets/mypic.jpg'
+import Card1 from './Card1';
+import myImage from '../assets/mypic.jpg';
+import CardSmall from './CardSmall';
+import Title from './Title';
+import CardImage from './CardImage';
+import CardText from './CardText';
 
 function Rightsection() {
   // const Data = [
   const ref = useRef(null);
+  const [classNameValue, setClassNameValue] = useState('false');
+
+  const updateClassName = (newClassName) => {
+    setClassNameValue(newClassName);
+  };
   return (
     <>
-      <div ref={ref} className='w-[55%] h-screen pt-10 pl-0 flex flex-row flex-wrap gap-5 overflow-x-hidden '>
+      <div ref={ref} className='w-[60%] h-auto py-20 pl-12 flex flex-row flex-wrap gap-8 overflow-x-hidden '>
+        <Title
+          reference={ref}
+          Data={{
+            Heading: "~ My Creative slice"
+          }} />
         <Card1
           reference={ref}
           Data={{
@@ -45,6 +58,11 @@ function Rightsection() {
             Link: "https://www.google.com"
           }}
         />
+        <Title
+          reference={ref}
+          Data={{
+            Heading: "Card 1"
+          }} />
         <Card1
           reference={ref}
           Data={{
@@ -54,17 +72,48 @@ function Rightsection() {
             Link: "https://www.google.com"
           }}
         />
-
-        {/* <CardSmall
-          smalldata={{
-            icon: "",
-            heading: "Small Card Heading",
-            button: "Follow",
-            buttonColor: "black"
+        <CardSmall
+          reference={ref}
+          Data={{
+            Image: myImage,
+            Subheading: "Check out my Projects! ew32 23423 2fedwf",
+            Button: "Follow"
           }}
-        /> */}
-
-
+        />
+        <CardSmall
+          reference={ref}
+          Data={{
+            Image: myImage,
+            Subheading: "Check out my Projects! ew32 23423 2fedwf",
+            Button: "Follow"
+          }}
+        />
+        <CardSmall
+          reference={ref}
+          Data={{
+            Image: myImage,
+            Subheading: "Check out my Projects! ew32 23423 2fedwf",
+            Button: "Follow"
+          }}
+        />
+        <CardImage
+          reference={ref}
+          Data={{
+            Image: myImage,
+          }}
+        />
+        <CardText
+          reference={ref}
+          type="h-44 w-[25rem]"
+          Data={{
+            Heading: "This is the only text card where you can type any text specifically as an Heading pr as a Description"
+          }} />
+        <CardText
+          reference={ref}
+          type="h-[25rem] w-44"
+          Data={{
+            Heading: "This is the only text card where you can type any text specifically as an Heading pr as a Description"
+          }} />
 
       </div>
     </>
