@@ -9,13 +9,16 @@ function CardSmall({ Data, reference, wordLimit = 5 }) {
     }
     return text;
   };
+  const handleDoubleClick = () => {
+    window.open(`${Data.Link}`, '_blank');
+  };
   return (
     <>
       <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.05 }} dragElastic={0.1}
 
-        className='h-44 w-44 bg-white rounded-2xl flex-row items-center p-4  shadow-md border-solid border-gray-200 border-[1px] cursor-pointer flex-shrink-0'>
+        className='h-44 w-44 bg-white rounded-2xl flex-row items-center p-4  shadow-md border-solid border-gray-200 border-[1px] cursor-pointer flex-shrink-0' onDoubleClick={handleDoubleClick}>
         <div>
-          <img src={Data.Image} className='object-cover h-12 w-12 flex justify-center content-center items-center rounded-lg my-1' />
+          <img src={Data.Image} className='object-cover h-12 w-12 flex justify-center content-center items-center rounded-lg my-1' draggable='false' />
         </div>
         <div>
           <h3 className='text-sm width-full break-words my-3'>{truncateText(Data.Subheading, wordLimit)}</h3>
