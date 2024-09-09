@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Card1 from './Card1';
 import myImage from '../assets/mypic.jpg';
+import cv from '../assets/resume.png';
 import Linkedin from '../assets/linkedin.svg';
 import Behance from '../assets/behance.svg';
 import CardSmall from './CardSmall';
@@ -30,7 +31,7 @@ function Rightsection() {
           type="h-[25rem] w-44"
           Data={{
             Heading: "Code is like humor. When you have to explain it, it's bad",
-            bgColor: "#5AB2E6",
+            bgColor: "bg-[#5AB2E6]",
             textColor: "text-[#FFFFFF]",
           }} />
         <CardSmall
@@ -40,41 +41,42 @@ function Rightsection() {
             Image: Linkedin,
             Subheading: "Let's Connect on LinkedIn!",
             buttonStatus: false,
-            btnColor: "#2A5AFC",
-            textColor: "#F9F9FA",
-            Button: "Follow",
-            Link: "https://www.google.com"
+            Link: "https://www.google.com",
+            order: "relative",
+            up: "",
+            east: "",
           }}
         />
         <CardSmall
           reference={ref}
           Data={{
-
             Image: Behance,
             Subheading: "Check Out my Design Projects!",
             buttonStatus: true,
-            btnColor: "#2A5AFC",
-            textColor: "slate-100",
+            btnColor: "bg-[#2A5AFC]",
+            textColor: "text-slate-100",
             Button: "Follow",
-            Link: "https://www.google.com"
+            Link: "https://www.google.com",
+            order: "relative",
+            up: "",
+            east: "",
           }}
         />
         <CardSmall
           reference={ref}
           Data={{
 
-            Image: Behance,
+            Image: Linkedin,
             Subheading: "Check Out my  Projects!",
             buttonStatus: true,
-            btnColor: "#2A5AFC",
-            textColor: "slate-100",
+            btnColor: "bg-[#2A5AFC]",
+            textColor: "text-slate-100",
             Button: "Follow",
             Link: "https://www.google.com",
             order: "absolute",
-            up: "21rem",
-
-            east: "16rem",
-            zindex: "100",
+            up: "top-[21rem]",
+            east: "right-[16rem]",
+            zindex: "z-100",
           }}
         />
         <CardSmall
@@ -88,9 +90,9 @@ function Rightsection() {
             Button: "Follow",
             Link: "https://www.google.com",
             order: "absolute",
-            up: "21rem",
-
-            east: "30rem",
+            up: "top-[21rem]",
+            east: "right-[30rem]",
+            zindex: "z-100",
           }}
         />
         <CardSmall
@@ -104,8 +106,9 @@ function Rightsection() {
             Button: "Follow",
             Link: "https://www.google.com",
             order: "absolute",
-            up: "425px",
-            east: "46px",
+            up: "top-[26rem]",
+            east: "right-[3rem]",
+            zindex: "z-100",
           }}
         />
         <CardText
@@ -113,43 +116,227 @@ function Rightsection() {
           type="h-44 w-[25rem]"
           Data={{
             Heading: "With a love for design and a knack for coding, I'm the architect of digital dreams.",
-            bgColor: "#FFFFFF",
+            bgColor: "bg-[#FFFFFF]",
             textColor: "text-[#000000]"
           }}
         />
+        {/* MY CV SECTION */}
         <Title
           reference={ref}
           Data={{
             Heading: "My CV ~"
           }} />
-        {/* <Card1
+
+        <Card1
           reference={ref}
           Data={{
-            Heading: "Card 1",
+            Heading: "My CV",
             Subheading: "This is the Subheading for card1",
-            Image: myImage,
+            Image: cv,
             Link: "https://www.google.com"
           }}
-        /> */}
+        />
 
-
-
-        {/* <CardImage
+        {/* My PROJECT SECTION */}
+        <Title
           reference={ref}
           Data={{
-            Image: myImage,
+            Heading: "My Projects ~"
+          }} />
+
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
             Link: "https://www.google.com"
           }}
-        /> */}
+        />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
 
+        {/* ACHIEVEMENTS SECTION */}
+        <Title
+          reference={ref}
+          Data={{
+            Heading: "My Achievements ~"
+          }} />
 
-        {/* <CardText
+        <CardImage
+          reference={ref}
+          Data={{
+            Image: Linkedin,
+            Link: "https://www.google.com"
+          }}
+        />
+        <CardText
           reference={ref}
           type="h-44 w-[25rem]"
           Data={{
-            Heading: "This is the only text card where you can type any text specifically as an Heading pr as a Description"
-          }} /> */}
-
+            Heading: "With a love for design and a knack for coding, I'm the architect of digital dreams.",
+            bgColor: "bg-[#FFFFFF]",
+            textColor: "text-[#000000]"
+          }}
+        />
+        <CardImage
+          reference={ref}
+          Data={{
+            Image: Linkedin,
+            Link: "https://www.google.com"
+          }}
+        />
+        <CardImage
+          reference={ref}
+          Data={{
+            Image: Linkedin,
+            Link: "https://www.google.com"
+          }}
+        />
+        <CardText
+          reference={ref}
+          type="h-44 w-[25rem]"
+          Data={{
+            Heading: "With a love for design and a knack for coding, I'm the architect of digital dreams.",
+            bgColor: "bg-[#FFFFFF]",
+            textColor: "text-[#000000]"
+          }}
+        />
+        <CardImage
+          reference={ref}
+          Data={{
+            Image: Linkedin,
+            Link: "https://www.google.com"
+          }}
+        />
+        <CardText
+          reference={ref}
+          type="h-44 w-[25rem]"
+          Data={{
+            Heading: "With a love for design and a knack for coding, I'm the architect of digital dreams.",
+            bgColor: "bg-[#FFFFFF]",
+            textColor: "text-[#000000]"
+          }}
+        />
+        <CardImage
+          reference={ref}
+          Data={{
+            Image: Linkedin,
+            Link: "https://www.google.com"
+          }}
+        />
+        <CardText
+          reference={ref}
+          type="h-44 w-[25rem]"
+          Data={{
+            Heading: "With a love for design and a knack for coding, I'm the architect of digital dreams.",
+            bgColor: "bg-[#FFFFFF]",
+            textColor: "text-[#000000]"
+          }}
+        />
+        {/* INTERSHIP AND CERTIFICATES */}
+        <Title
+          reference={ref}
+          Data={{
+            Heading: "My Internships & Certificates ~"
+          }} />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
+        <Card1
+          reference={ref}
+          Data={{
+            Heading: "My CV",
+            Subheading: "This is the Subheading for card1",
+            Image: cv,
+            Link: "https://www.google.com"
+          }}
+        />
       </div>
     </>
   )

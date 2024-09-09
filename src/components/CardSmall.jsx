@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+
 // Function to truncate the subheading if it exceeds the word limit
 function CardSmall({ Data, reference, wordLimit = 5 }) {
   const truncateText = (text, limit) => {
@@ -23,9 +24,9 @@ function CardSmall({ Data, reference, wordLimit = 5 }) {
           ? "h-44 w-44"
           : "h-[5rem] w-[25rem] flex justify-left gap-5 font-medium"
           } bg-white rounded-2xl flex-row items-center p-4  shadow-md border-solid border-gray-200 border-[1px] cursor-pointer flex-shrink-0 ${Data.order}
-          top-[${Data.up}]
-          right-[${Data.east}]
-          z-[${Data.zindex}]`}
+          ${Data.up}
+          ${Data.east}
+          ${Data.zindex}`}
         onDoubleClick={handleDoubleClick}
       >
         <div>
@@ -42,11 +43,7 @@ function CardSmall({ Data, reference, wordLimit = 5 }) {
         </div>
         <div
           className={` ${Data.buttonStatus ? "h-7" : "hidden"
-            }  w-[5rem] rounded-md content-center text-center my-4
-        ${Data.buttonStatus
-              ? `bg-[${Data.btnColor}] text-${Data.textColor}`
-              : `bg-slate-100`
-            }`}
+            }  w-[5rem] rounded-md content-center text-center my-4 ${Data.btnColor} ${Data.textColor}`}
         >
           <button>{Data.Button}</button>
         </div>
